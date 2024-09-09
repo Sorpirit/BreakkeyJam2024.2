@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class SimpleCarController : MonoBehaviour
 {
-    private float horizontalInput, verticalInput;
-    private float currentSteerAngle, currentbreakForce;
-    private bool isBreaking;
-
-    // Settings
-    [SerializeField] private float motorForce, breakForce, maxSteerAngle;
+    
+    [SerializeField] private float motorForce;
+    [SerializeField] private float breakForce;
+    [SerializeField] private float maxSteerAngle;
 
     // Wheel Colliders
     [SerializeField] private WheelCollider frontLeftWheelCollider, frontRightWheelCollider;
@@ -19,6 +17,10 @@ public class SimpleCarController : MonoBehaviour
     // Wheels
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
+
+    private float horizontalInput, verticalInput;
+    private float currentSteerAngle, currentbreakForce;
+    private bool isBreaking;
 
     private void FixedUpdate() {
         GetInput();
