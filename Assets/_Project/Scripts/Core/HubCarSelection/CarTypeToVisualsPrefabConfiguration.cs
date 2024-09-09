@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace _Project.Scripts.Core.HubCarSelection {
@@ -12,5 +13,12 @@ namespace _Project.Scripts.Core.HubCarSelection {
         
         public bool HasVisualPrefab(CarType carType) =>
             CarTypeToVisualItems.Any(carTypeToVisualItem => carTypeToVisualItem.CarType == carType);
+    }
+
+    [Serializable]
+    public class CarHubItem {
+        public CarType CarType;
+        public Sprite Icon;
+        public string Name;
     }
 }

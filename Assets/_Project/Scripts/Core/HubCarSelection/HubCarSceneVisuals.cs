@@ -7,6 +7,8 @@ namespace _Project.Scripts.Core.HubCarSelection {
         private CarTypeToVisualsPrefabConfiguration _carTypeToVisualsPrefabConfiguration;
         
         private GameObject _currentVisual;
+
+        [SerializeField] private CarSpawnPlatform _carSpawnPlatform;
         
         [Inject]
         private void InjectDependencies(SelectedCarModel selectedCarModel, CarTypeToVisualsPrefabConfiguration carTypeToVisualsPrefabConfiguration) {
@@ -27,7 +29,7 @@ namespace _Project.Scripts.Core.HubCarSelection {
                 Destroy(_currentVisual);
 
             if (_carTypeToVisualsPrefabConfiguration.HasVisualPrefab(carType))
-                _currentVisual = Instantiate(_carTypeToVisualsPrefabConfiguration.GetVisualPrefab(carType));
+                _currentVisual = Instantiate(_carTypeToVisualsPrefabConfiguration.GetVisualPrefab(carType), _carSpawnPlatform.SpawnParent);
         }
     }
 }

@@ -233,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _carType: 1
   _button: {fileID: 5460296815311109812}
+  _carName: {fileID: 5013629336040971300}
 --- !u!1 &4822649259525911485
 GameObject:
   m_ObjectHideFlags: 0

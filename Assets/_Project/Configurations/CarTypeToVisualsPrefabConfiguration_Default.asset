@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CarTypeToVisualItems>k__BackingField:
   - <CarType>k__BackingField: 1
-    <VisualPrefab>k__BackingField: {fileID: 6481620807824349781, guid: 3b5f4d5567c4c2a478a9aebe61cb3674, type: 3}
+    <VisualPrefab>k__BackingField: {fileID: 6481620807824349781, guid: d90cf5b39b2c86b4da11b99006e0910f, type: 3}
   - <CarType>k__BackingField: 2
-    <VisualPrefab>k__BackingField: {fileID: 6057778964265928856, guid: 972cf7e56f81eff469a907995be45333, type: 3}
+    <VisualPrefab>k__BackingField: {fileID: 6057778964265928856, guid: deb87ae3fa63c0c4dbb51f9d160c575d, type: 3}
   - <CarType>k__BackingField: 3
-    <VisualPrefab>k__BackingField: {fileID: 8193957759878430115, guid: f4e1c988bf0b6384db058a56b7b66ad8, type: 3}
+    <VisualPrefab>k__BackingField: {fileID: 8193957759878430115, guid: 5dcfa0442f187624787b85c72a969cb0, type: 3}
   - <CarType>k__BackingField: 4
-    <VisualPrefab>k__BackingField: {fileID: 765427127081145269, guid: a92b6ad6b6699764693c1f8a3fd86b95, type: 3}
+    <VisualPrefab>k__BackingField: {fileID: 765427127081145269, guid: 41c9191f70e6de840aeb5fbb282ceb58, type: 3}
   - <CarType>k__BackingField: 5
-    <VisualPrefab>k__BackingField: {fileID: 7190284906965080522, guid: d7cf2f04c8abf80408480095f74e38b1, type: 3}
+    <VisualPrefab>k__BackingField: {fileID: 7190284906965080522, guid: a058208f18b86654dae58a8fc2fefa11, type: 3}

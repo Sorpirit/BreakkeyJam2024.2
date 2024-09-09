@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -6,6 +7,7 @@ namespace _Project.Scripts.Core.HubCarSelection {
     public class ChooseCarButton : MonoBehaviour {
         [SerializeField] private CarType _carType;
         [SerializeField] private Button _button;
+        [SerializeField] private TMP_Text _carName;
         
         private SelectedCarModel _selectedCarModel;
         
@@ -24,5 +26,8 @@ namespace _Project.Scripts.Core.HubCarSelection {
 
         private void OnButtonClicked() =>
             _selectedCarModel.SetCarType(_carType);
+
+        public void SetCarHubItem(string carName) =>
+            _carName.text = carName;
     }
 }
