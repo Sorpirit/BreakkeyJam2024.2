@@ -1,10 +1,9 @@
-﻿using _Project.Scripts.Core;
-using _Project.Scripts.Core.HubCarSelection;
+﻿using _Project.Scripts.Core.HubCarSelection;
 using _Project.Scripts.Infrastructure;
 using _Project.Scripts.Infrastructure.AssetLoaderModule.Scripts;
 using Zenject;
 
-namespace _Project.Scripts {
+namespace _Project.Scripts.Core.CarUpgrades {
     public class ProjectContextInstaller : MonoInstaller {
         public override void InstallBindings() {
             AssetLoaderInstaller.Install(Container);
@@ -17,7 +16,9 @@ namespace _Project.Scripts {
     }
 
     public class DataInstaller : Installer<DataInstaller> {
-        public override void InstallBindings() =>
+        public override void InstallBindings() {
             Container.Bind<SelectedCarModel>().AsSingle();
+            Container.Bind<CurrentCarStatsModel>().AsSingle();
+        }
     }
 }
