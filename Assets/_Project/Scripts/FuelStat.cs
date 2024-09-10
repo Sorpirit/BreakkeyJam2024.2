@@ -25,4 +25,11 @@ public class FuelStat : MonoBehaviour
             fuleFill.fillAmount = _currentFuel / maxFule;
         }
     }
+
+    public void AddFuel(float fuel)
+    {
+        _currentFuel += fuel;
+        _currentFuel = Mathf.Clamp(_currentFuel, 0, maxFule);
+        fuleFill.fillAmount = _currentFuel / maxFule;
+    }
 }
