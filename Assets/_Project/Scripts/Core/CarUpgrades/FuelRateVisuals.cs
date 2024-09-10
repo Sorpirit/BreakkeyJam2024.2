@@ -1,20 +1,29 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _Project.Scripts.Core.CarUpgrades {
     public class FuelRateVisuals : MonoBehaviour {
-        [SerializeField] private CarStatsHolder _carStatsHolder;
+        [Inject] private CurrentCarStatsModel _currentCarStatsModel;
         [SerializeField] private Image _fuelFill;
-    
+
         private void OnEnable() {
-            _carStatsHolder.OnFuelValueUpdated += UpdateFuelFill;
+            if (_currentCarStatsModel.CarStatsHolder != null)
+                SubscribeToEvents();
+            _currentCarStatsModel.OnCarStatsHolderChanged += SubscribeToEvents;
+        }
+
+        private void SubscribeToEvents() {
+            _currentCarStatsModel.CarStatsHolder.OnFuelValueUpdated += UpdateFuelFill;
             UpdateFuelFill();
         }
-    
-        private void OnDisable() =>
-            _carStatsHolder.OnFuelValueUpdated -= UpdateFuelFill;
+
+        private void OnDisable() {
+            _currentCarStatsModel.CarStatsHolder.OnFuelValueUpdated -= UpdateFuelFill;
+            _currentCarStatsModel.OnCarStatsHolderChanged -= SubscribeToEvents;
+        }
 
         private void UpdateFuelFill() =>
-            _fuelFill.fillAmount = _carStatsHolder.CurrentFuel / _carStatsHolder.MaxFuel;
+            _fuelFill.fillAmount = _currentCarStatsModel.CarStatsHolder.CurrentFuel / _currentCarStatsModel.CarStatsHolder.CurrentHealth;
     }
 }

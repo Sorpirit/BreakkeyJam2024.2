@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace _Project.Scripts.Core.CarUpgrades {
     public class ApplyUpgradeOnButton : MonoBehaviour {
+        [Inject] private CurrentCarStatsModel _currentCarStatsModel;
         [SerializeField] private CarStatUpgradeConfiguration _carStatUpgradeConfiguration;
-        [SerializeField] private CarStatsHolder _carStatsHolder;
         [SerializeField] private Button _button;
 
         private void OnEnable() =>
@@ -14,6 +15,6 @@ namespace _Project.Scripts.Core.CarUpgrades {
             _button.onClick.RemoveListener(ApplyUpgrade);
 
         private void ApplyUpgrade() =>
-            _carStatUpgradeConfiguration.ApplyUpgrade(_carStatsHolder);
+            _carStatUpgradeConfiguration.ApplyUpgrade(_currentCarStatsModel.CarStatsHolder);
     }
 }
