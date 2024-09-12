@@ -25,6 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   - _SPECULAR_SETUP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -183,8 +184,8 @@ Material:
     - _Reflection: 0
     - _ShadowIntensity: 0.314
     - _Shininess: 0.081
-    - _Smoothness: 0.5
-    - _SmoothnessTextureChannel: 0
+    - _Smoothness: 0.198
+    - _SmoothnessTextureChannel: 1
     - _Sparkle: 0.01
     - _SpecularHighlights: 1
     - _SquashAmount: 1
