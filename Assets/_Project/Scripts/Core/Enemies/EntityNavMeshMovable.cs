@@ -20,4 +20,4 @@ namespace _Project.Scripts.Core.Enemies {
             _speed = speed;
         }
     }
-}
+} 
