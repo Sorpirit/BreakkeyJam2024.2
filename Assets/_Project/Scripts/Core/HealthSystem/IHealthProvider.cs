@@ -1,4 +1,4 @@
-﻿namespace Assets._Project.Scripts.Core.HealthSystem
+﻿namespace _Project.Scripts.Core.HealthSystem
 {
     public interface IHealthProvider
     {

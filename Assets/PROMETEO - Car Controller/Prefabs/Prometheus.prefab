@@ -47,11 +47,10 @@ GameObject:
   - component: {fileID: 5135156708204615449}
   - component: {fileID: 627556911}
   - component: {fileID: 2836966263599828806}
-  - component: {fileID: 2970815979372738139}
-  - component: {fileID: 8642539376373468866}
   - component: {fileID: 3817595844056107483}
   - component: {fileID: 6972358230754438938}
   - component: {fileID: 4963674516590312698}
+  - component: {fileID: 12431165426360876}
   m_Layer: 6
   m_Name: Prometheus
   m_TagString: Untagged
@@ -140,7 +139,7 @@ MonoBehaviour:
   RRWParticleSystem: {fileID: 4402756320999286479}
   RLWTireSkid: {fileID: 7045468751846977024}
   RRWTireSkid: {fileID: 7045468751210077382}
-  useUI: 1
+  useUI: 0
   carSpeedText: {fileID: 0}
   useSounds: 0
   carEngineSound: {fileID: 0}
@@ -167,59 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carStatsHolder: {fileID: 3817595844056107483}
---- !u!114 &2970815979372738139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642287924342879162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe6a47ba508b38447b2ce5d3c78635b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _carStatsHolder: {fileID: 3817595844056107483}
---- !u!114 &8642539376373468866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642287924342879162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1222c4cc949615e4cacb1decaae33400, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carController: {fileID: 627556911}
-  _damageable: {fileID: 2970815979372738139}
-  carRb: {fileID: 5135156708204615449}
-  minSpeedForDamage: 2
-  speedDamageCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 10
-      value: 150
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &3817595844056107483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,11 +182,11 @@ MonoBehaviour:
   _currentFuel: 25
   _fuelUsageScale: 0.01
   _maxHealth: 200
-  _currentHealth: 200
   _minSpeedForDamage: 2
-  _carBodyDamageMultiplier: 150
+  _carBodyDamageMultiplier: 220
   _damageScale: 1
-  _speed: 120
+  _maxSpeed: 150
+  _upgradePoints: 3
 --- !u!114 &6972358230754438938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +216,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prometeoCarController: {fileID: 627556911}
   _carStatsHolder: {fileID: 3817595844056107483}
+--- !u!114 &12431165426360876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642287924342879162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b9b7b160169274fb1444c89d89ca4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationImpulse: 5500
+  damageCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 22000
+      value: 210
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &934883528070179459
 GameObject:
   m_ObjectHideFlags: 0

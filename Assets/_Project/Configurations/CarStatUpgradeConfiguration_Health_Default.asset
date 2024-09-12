@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a782e69d8040f285d6a905b10a27bf, type: 3}
   m_Name: CarStatUpgradeConfiguration_Health_Default
   m_EditorClassIdentifier: 
+  _upgradePointsCost: 5
   _healthUpgradeValue: 20

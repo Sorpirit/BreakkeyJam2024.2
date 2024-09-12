@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 
-namespace Assets._Project.Scripts.Core.HealthSystem
+namespace _Project.Scripts.Core.HealthSystem
 {
     public class HealthStat
     {
@@ -9,7 +10,7 @@ namespace Assets._Project.Scripts.Core.HealthSystem
             set
             { 
                 _maxHealth = value;
-                OnMaxHealthUpdated.Invoke(_maxHealth);
+                OnMaxHealthUpdated?.Invoke(_maxHealth);
             } 
         }
         public float Health 
@@ -22,7 +23,14 @@ namespace Assets._Project.Scripts.Core.HealthSystem
 
                 var evnt = _health > value ? OnDamageRecived : OnHealling;
                 _health = value;
-                evnt.Invoke(_health);
+                evnt?.Invoke(_health);
+                OnHealthUpdated?.Invoke();
+
+                if(_health <= 0)
+                {
+                    IsDead = true;
+                    OnDead?.Invoke();
+                }
             }  
         }
 
@@ -32,6 +40,7 @@ namespace Assets._Project.Scripts.Core.HealthSystem
 
         public event Action<float> OnDamageRecived;
         public event Action<float> OnHealling;
+        public event Action OnHealthUpdated;
         public event Action OnDead;
         public event Action<float> OnMaxHealthUpdated;
 

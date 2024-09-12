@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 160a6fdd5a8547609d8d0cdbe8c45630, type: 3}
   m_Name: CarStatUpgradeConfiguration_Speed_Default
   m_EditorClassIdentifier: 
+  _upgradePointsCost: 7
   _speedUpgradeValue: 20

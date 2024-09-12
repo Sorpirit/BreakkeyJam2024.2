@@ -6,9 +6,9 @@ namespace _Project.Scripts.Core.CarUpgrades {
     public class CarStatUpgradeConfiguration_Health : CarStatUpgradeConfiguration {
         [SerializeField] private float _healthUpgradeValue;
 
-        public override void ApplyUpgrade(CarStatsHolder carStatsHolder) {
-            carStatsHolder.MaxHealth += _healthUpgradeValue;
-            carStatsHolder.CurrentHealth += _healthUpgradeValue;
+        protected override void ApplyUpgrade(CarStatsHolder carStatsHolder) {
+            carStatsHolder.HealthStat.MaxHealth += _healthUpgradeValue;
+            carStatsHolder.HealthStat.Health += _healthUpgradeValue;
         }
     }
 }

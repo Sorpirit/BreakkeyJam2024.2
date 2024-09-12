@@ -6,7 +6,7 @@ namespace _Project.Scripts.Core.CarUpgrades {
     public class CarStatUpgradeConfiguration_Fuel : CarStatUpgradeConfiguration {
         [SerializeField] private float _fuelUpgradeValue;
 
-        public override void ApplyUpgrade(CarStatsHolder carStatsHolder) {
+        protected override void ApplyUpgrade(CarStatsHolder carStatsHolder) {
             carStatsHolder.MaxFuel += _fuelUpgradeValue;
             carStatsHolder.CurrentFuel += _fuelUpgradeValue;
         }

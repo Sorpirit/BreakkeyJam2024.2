@@ -14,7 +14,11 @@ namespace _Project.Scripts.Core.CarUpgrades {
         private void OnDisable() =>
             _button.onClick.RemoveListener(ApplyUpgrade);
 
-        private void ApplyUpgrade() =>
-            _carStatUpgradeConfiguration.ApplyUpgrade(_currentCarStatsModel.CarStatsHolder);
+        private void ApplyUpgrade()
+        {
+            bool result = _carStatUpgradeConfiguration.TryApplyUpgrade(_currentCarStatsModel.CarStatsHolder);
+            Debug.Log(result ? "Upgrade applied!" : "Unable to apply upgrade" );
+        }
+            
     }
 }

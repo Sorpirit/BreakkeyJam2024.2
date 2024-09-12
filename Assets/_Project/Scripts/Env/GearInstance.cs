@@ -16,8 +16,7 @@ public class GearInstance : MonoBehaviour
             return;
         if (other.gameObject.Equals(_carStatsHolder.gameObject)) {
             Destroy(this.gameObject);
-            _carStatsHolder.CurrentUpdatePoints += points; 
-            Debug.Log(_carStatsHolder.CurrentUpdatePoints);
+            _carStatsHolder.UpgradePoints += points; 
         }
     }
 

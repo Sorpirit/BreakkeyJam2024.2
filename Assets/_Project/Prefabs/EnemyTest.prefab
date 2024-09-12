@@ -66,6 +66,8 @@ GameObject:
   - component: {fileID: 5326341333541701759}
   - component: {fileID: 7370186217361037748}
   - component: {fileID: 5993103466870059133}
+  - component: {fileID: 3249257142453921937}
+  - component: {fileID: 3382073906455377999}
   m_Layer: 0
   m_Name: EnemyTest
   m_TagString: Untagged
@@ -98,7 +100,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3893873264519847692}
   serializedVersion: 4
-  m_Mass: 90
+  m_Mass: 30
   m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -154,10 +156,10 @@ MonoBehaviour:
   _entityMovable: {fileID: 5993103466870059133}
   _attackDistance: 5
   _sightDistance: 60
-  _patrolRadius: 35
+  _patrolRadius: 25
   _minDistanceToPatrolPoint: 1
   _patrolSpeed: 12
-  _chaseSpeed: 35
+  _chaseSpeed: 30
 --- !u!114 &5993103466870059133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +175,58 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 5326341333541701759}
   _speed: 10
   _rotationSpeed: 0.4
+--- !u!114 &3249257142453921937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893873264519847692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44361633a017e042bc3eb128d085dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0.1
+  ragdallPrefab: {fileID: 8485983348367409096, guid: 24af9004cd55d8345b800d3f20bafa50, type: 3}
+  ragdallPosition: {fileID: 2426434409198647374}
+--- !u!114 &3382073906455377999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893873264519847692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b9b7b160169274fb1444c89d89ca4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationImpulse: 400
+  damageCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1500
+      value: 120
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &2426434409199035098
 PrefabInstance:
   m_ObjectHideFlags: 0

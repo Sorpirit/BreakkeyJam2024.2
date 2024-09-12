@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using Zenject;
 
 namespace _Project.Scripts.Core.CarUpgrades {
     public class FuelStation : MonoBehaviour
@@ -7,14 +8,16 @@ namespace _Project.Scripts.Core.CarUpgrades {
         [SerializeField] private float fullingSpeed;
         [SerializeField] private float fuellingStationMaxCapacity;
 
-        [FormerlySerializedAs("stat"),SerializeField] private FuelManager _manager;
+        [Inject] private CurrentCarStatsModel _currentCarStatsModel;
 
+        private FuelManager _manager;
         private bool _isFuellingCar;
         private float _currentFuel;
 
         private void Start()
         {
             _currentFuel = fuellingStationMaxCapacity;
+            _manager = _currentCarStatsModel.CarStatsHolder.GetComponent<FuelManager>();
         }
 
         private void Update()

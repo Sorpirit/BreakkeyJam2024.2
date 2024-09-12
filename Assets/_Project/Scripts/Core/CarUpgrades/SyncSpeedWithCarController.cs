@@ -6,14 +6,23 @@ namespace _Project.Scripts.Core.CarUpgrades {
         [SerializeField] private CarStatsHolder _carStatsHolder;
 
         private void OnEnable() {
-            _carStatsHolder.OnSpeedValueUpdated += UpdateSpeed;
+            _carStatsHolder.OnMaxSpeedValueUpdated += UpdateMaxSpeed;
+            UpdateMaxSpeed();
             UpdateSpeed();
         }
 
         private void OnDisable() =>
-            _carStatsHolder.OnSpeedValueUpdated -= UpdateSpeed;
+            _carStatsHolder.OnMaxSpeedValueUpdated -= UpdateMaxSpeed;
+
+        private void LateUpdate()
+        {
+            UpdateSpeed();
+        }
+
+        private void UpdateMaxSpeed() =>
+            _prometeoCarController.maxSpeed = (int)_carStatsHolder.MaxSpeed;
 
         private void UpdateSpeed() =>
-            _prometeoCarController.maxSpeed = (int)_carStatsHolder.Speed;
+            _carStatsHolder.Speed = (int) Mathf.Abs(_prometeoCarController.carSpeed);
     }
 }

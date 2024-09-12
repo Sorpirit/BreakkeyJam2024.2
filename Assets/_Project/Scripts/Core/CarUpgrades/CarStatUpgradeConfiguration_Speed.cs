@@ -6,7 +6,7 @@ namespace _Project.Scripts.Core.CarUpgrades {
     public class CarStatUpgradeConfiguration_Speed : CarStatUpgradeConfiguration {
         [SerializeField] private float _speedUpgradeValue;
 
-        public override void ApplyUpgrade(CarStatsHolder carStatsHolder) =>
-            carStatsHolder.Speed += _speedUpgradeValue;
+        protected override void ApplyUpgrade(CarStatsHolder carStatsHolder) =>
+            carStatsHolder.MaxSpeed += _speedUpgradeValue;
     }
 }

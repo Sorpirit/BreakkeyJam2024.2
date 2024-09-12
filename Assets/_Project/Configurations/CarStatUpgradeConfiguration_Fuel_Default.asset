@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2897ca14159847499cabb37983554a07, type: 3}
   m_Name: CarStatUpgradeConfiguration_Fuel_Default
   m_EditorClassIdentifier: 
+  _upgradePointsCost: 10
   _fuelUpgradeValue: 12

@@ -1,32 +1,22 @@
+using _Project.Scripts.Core.CarUpgrades;
 using UnityEngine;
+using Zenject;
 
 public class TargetWin : MonoBehaviour
 {
     [SerializeField] private GameObject winScreen;
+    [Inject] private CurrentCarStatsModel _currentCarStatsModel;
 
-    //temp
-    [SerializeField] private GameObject car;
-    void Start()
+    private void Start()
     {
         winScreen.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    } 
+        if (other.attachedRigidbody.gameObject != _currentCarStatsModel.CarStatsHolder.gameObject)
+            return;
 
-    private void OnTriggerEnter(Collider other) {
-        //for future scene with car
-        /*if(other.gameObject.TryGetComponent(out CarObject car)) {
-
-        }*/
-
-        if (other.gameObject.Equals(car)) { 
-            winScreen.SetActive(true);
-        }
-  
+        winScreen.SetActive(true);
     }
-
 }

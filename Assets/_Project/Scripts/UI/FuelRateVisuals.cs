@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using _Project.Scripts.Core.CarUpgrades;
+using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-namespace _Project.Scripts.Core.CarUpgrades {
-    public class FuelRateVisuals : MonoBehaviour {
+namespace _Project.Scripts.UI
+{
+    internal class FuelRateVisuals : MonoBehaviour 
+    {
         [Inject] private CurrentCarStatsModel _currentCarStatsModel;
         [SerializeField] private Image _fuelFill;
 
@@ -24,6 +27,6 @@ namespace _Project.Scripts.Core.CarUpgrades {
         }
 
         private void UpdateFuelFill() =>
-            _fuelFill.fillAmount = _currentCarStatsModel.CarStatsHolder.CurrentFuel / _currentCarStatsModel.CarStatsHolder.CurrentHealth;
+            _fuelFill.fillAmount = _currentCarStatsModel.CarStatsHolder.CurrentFuel / _currentCarStatsModel.CarStatsHolder.MaxFuel;
     }
 }
