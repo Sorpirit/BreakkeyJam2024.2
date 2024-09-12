@@ -23,6 +23,9 @@ namespace _Project.Scripts.Core.CarUpgrades {
         [Header("Speed")]
         [SerializeField] private float _speed;
 
+        [Header("Score")]
+        [SerializeField] private float _points;
+
         public float MaxFuel { get => _maxFuel; set => _maxFuel = value; }
 
         public float CurrentFuel {
@@ -63,9 +66,17 @@ namespace _Project.Scripts.Core.CarUpgrades {
                 OnSpeedValueUpdated?.Invoke();
             }
         }
+        public float CurrentUpdatePoints {
+            get => _points;
+            set {
+                _points = value;
+                OnUpdatePointsValueUpdated?.Invoke();
+            }
+        }
 
         public event Action OnHealthValueUpdated;
         public event Action OnSpeedValueUpdated;
         public event Action OnFuelValueUpdated;
+        public event Action OnUpdatePointsValueUpdated;
     }
 }

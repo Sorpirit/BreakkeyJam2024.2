@@ -172,7 +172,7 @@ Material:
     - _Reflection: 0
     - _ShadowIntensity: 0.6
     - _Shininess: 0.063
-    - _Smoothness: 0.142
+    - _Smoothness: 0.024
     - _SmoothnessTextureChannel: 1
     - _Sparkle: 0.01
     - _SpecularHighlights: 1
