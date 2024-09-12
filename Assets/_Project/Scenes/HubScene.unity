@@ -1719,7 +1719,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carTypes: 0100000002000000030000000400000005000000
-  _defaultCarType: 1
   _carHubItemsConfiguration: {fileID: 11400000, guid: 6d59d1004b38b5b4b9e068edee4c2962, type: 2}
   _contentParent: {fileID: 218162031}
   _chooseCarButtonPrefab: {fileID: 3188964608271179425, guid: 11c48c8dbf90a584cb89437992794779, type: 3}

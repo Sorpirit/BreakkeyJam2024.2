@@ -5,7 +5,8 @@
 
     public static class Address {
         public static class Configurations {
-            public const string CarTypeToVisualsPrefabConfiguration = "CarTypeToVisualsPrefabConfiguration"; 
+            public const string CarTypeToVisualsPrefabConfiguration = "CarTypeToVisualsPrefabConfiguration";
+            public const string CarInGamePrefabConfiguration = "CarInGamePrefabConfiguration";
         }
     }
 }
