@@ -1,28 +1,24 @@
+using _Project.Scripts.Core.CarUpgrades;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
-
+using _Project.Scripts.Core.CarUpgrades;
+using Zenject;
 
 public class GearInstance : MonoBehaviour
 {   
-    //temp
-    [SerializeField] private GameObject car;
+    [SerializeField] private CarStatsHolder _carStatsHolder;
+    [SerializeField] private int points = 10;
 
     private void OnTriggerEnter(Collider other) {
-        //for future scene with car
-        /*if(other.gameObject.TryGetComponent(out CarObject car)) {
-
-        }*/
-
-        if (other.gameObject.Equals(car)) {
-            Debug.Log("piip");
+        if (other.gameObject != _carStatsHolder.gameObject)
+            return;
+        if (other.gameObject.Equals(_carStatsHolder.gameObject)) {
             Destroy(this.gameObject);
-            ScoreManager.instance.AddPoint();
+            _carStatsHolder.CurrentUpdatePoints += points; 
+            Debug.Log(_carStatsHolder.CurrentUpdatePoints);
         }
     }
-
-   
-
 
 }
