@@ -9,7 +9,7 @@ namespace _Project.Scripts.Core.CarSpawnService {
         [SerializeField] private CinemachineCamera _cinemachineCamera;
         
         
-        private void Start() {
+        private void Awake() {
             GameObject spawnedCar = _carSpawnerService.Spawn();
             _hardLock.SetTarget(spawnedCar.transform);
             _cinemachineCamera.Follow = spawnedCar.transform;
